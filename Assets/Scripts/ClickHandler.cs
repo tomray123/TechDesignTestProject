@@ -19,11 +19,18 @@ public class ClickHandler : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (animator && audioSource && !isOpened)
+        if (animator && audioSource)
         {
-            animator.SetTrigger("Enable");
-            audioSource.Play();
-            isOpened = true;
+            if (!isOpened)
+            {
+                animator.SetTrigger("Enable");
+                audioSource.Play();
+                isOpened = true;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Error in ClickHandler! Missing Animator or AudioSource components!");
         }
     }
 }
