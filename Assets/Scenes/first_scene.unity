@@ -187,6 +187,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 923856937064178796, guid: 2c04c8aa41e71f04f90ebe235fc5acb7, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 12839329792
+      objectReference: {fileID: 0}
+    - target: {fileID: 923856937064178796, guid: 2c04c8aa41e71f04f90ebe235fc5acb7, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:3d8e2c7a54d73694da123c8450e7712c
+      objectReference: {fileID: 0}
     - target: {fileID: 4267731481203460902, guid: 2c04c8aa41e71f04f90ebe235fc5acb7, type: 3}
       propertyPath: m_RootOrder
       value: 4
