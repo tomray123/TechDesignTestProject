@@ -15,6 +15,12 @@ public class ClickHandler : MonoBehaviour
     private Animator animator;
     private AudioSource audioSource;
     private bool isClicked = false;
+    private UIManager UIManager;
+
+    private void Awake()
+    {
+        UIManager = FindObjectOfType<UIManager>();
+    }
 
     void Start()
     {
@@ -24,18 +30,34 @@ public class ClickHandler : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (animator && audioSource)
+        // Check if animator and audio source exist
+        if (animator != null && audioSource != null)
         {
+            // Do actions when first click or multiple clicks allowed
             if (allowMultipleClick || !isClicked)
             {
                 animator.SetTrigger("Enable");
                 audioSource.Play();
                 isClicked = true;
+                // Enabling next level button
+                if (enableUIButton)
+                {
+                    if (UIManager != null)
+                    {
+                        UIManager.EnableNextLevelButton();
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Couldn't find UIManger on current scene!");
+                        return;
+                    }
+                }
             }
         }
         else
         {
             Debug.LogWarning("Error in ClickHandler! Missing Animator or AudioSource components!");
+            return;
         }
     }
 }
