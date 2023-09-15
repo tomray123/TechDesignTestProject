@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a2a7bcdbebfc046af85ce0ca906d58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableUIButton: 0
+  enableUIButton: 1
   allowMultipleClick: 0
   soundName: chest
 --- !u!61 &5608973353119791159
