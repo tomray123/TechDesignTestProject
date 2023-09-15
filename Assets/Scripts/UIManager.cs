@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
     {
         if (nextLevelButton != null)
         {
-            nextLevelButton.enabled = false;
+            nextLevelButton.interactable = false;
         }
         else
         {
@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
     {
         if (nextLevelButton != null)
         {
-            nextLevelButton.enabled = true;
+            nextLevelButton.interactable = true;
         }
         else
         {
