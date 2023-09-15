@@ -8,17 +8,22 @@ public class ClickHandler : MonoBehaviour
     [SerializeField]
     private bool enableUIButton;
     private Animator animator;
+    private AudioSource audioSource;
+    private bool isOpened = false;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnMouseDown()
     {
-        if (animator)
+        if (animator && audioSource && !isOpened)
         {
             animator.SetTrigger("Enable");
+            audioSource.Play();
+            isOpened = true;
         }
     }
 }
