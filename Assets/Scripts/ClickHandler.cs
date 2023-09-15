@@ -6,10 +6,15 @@ public class ClickHandler : MonoBehaviour
 {
     // Enables next level button if true
     [SerializeField]
+    [Header("Enable button after click")]
     private bool enableUIButton;
+    // Allow to repeat click actions many times
+    [SerializeField]
+    [Header("Allow multiple clicking")]
+    private bool allowMultipleClick = false;
     private Animator animator;
     private AudioSource audioSource;
-    private bool isOpened = false;
+    private bool isClicked = false;
 
     void Start()
     {
@@ -21,11 +26,11 @@ public class ClickHandler : MonoBehaviour
     {
         if (animator && audioSource)
         {
-            if (!isOpened)
+            if (allowMultipleClick || !isClicked)
             {
                 animator.SetTrigger("Enable");
                 audioSource.Play();
-                isOpened = true;
+                isClicked = true;
             }
         }
         else
